@@ -1,3 +1,8 @@
+# NOT COMPLETED, IT'S GIVING SOME UNDEFINED ERROR Messages
+#MAYBE I WILL DO IT SOME TIME LATER
+
+
+
 import cv2
 import mediapipe as mp
 import time
@@ -34,7 +39,7 @@ def main():
     currT = 0
     vid = cv2.VideoCapture(0)
     detector = handDetector()
-    
+
     while True:
         success, img = vid.read()
         img = detector.findHands(img)
@@ -46,8 +51,7 @@ def main():
         cv2.putText(img, str(int(fps)), (10,70), cv2.FONT_HERSHEY_COMPLEX_SMALL,2,(0,0,0),2)
 
         cv2.imshow("Video", img)
-        if cv2.waitKey(1) & 0xff ==ord('q'):
-            break
+        cv2.waitKey(1)
 
 if __name__ == '__main__':
     main()
